@@ -1,0 +1,535 @@
+/* ANIMATION-=-------------------------- */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes slideIn {
+    from {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideIn_2 {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {  
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideIn_3 {
+    from {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    to {  
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideUp {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUpSimple {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideDown {
+    from {
+      transform: translateY(-50px); /* start above */
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0); /* end in place */
+      opacity: 1;
+    }
+  }
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.7); /* starts invisible/super tiny */
+      opacity: 0;
+    }
+    to {
+      transform: scale(1); /* normal size */
+      opacity: 1;
+    }
+  }
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* completely invisible */
+  }
+  100% {
+    opacity: 1; /* fully visible */
+  }
+}
+
+
+
+
+.todo {
+  opacity: 0;
+}
+
+
+
+.appear{
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1.2s;
+  font-weight: 630;
+}
+
+.line{
+  opacity: 0;
+animation: slideUp 1s ease 1s forwards
+}
+.bar_nav{
+      animation: fadeIn 1.2s ease forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+}
+/* Font styles //////////////////////////////*/
+  .nav_word{
+      font-family: "Quicksand", sans-serif;
+  }
+  .comment{
+  font-family: "Comfortaa", sans-serif;
+}
+.font_2{
+
+font-family: "Tinos", serif;
+  font-weight: 500;
+  font-style: normal;}
+.font{
+    font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+    /* ================= Navigation Bar ================= */
+  #nav_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color:#e5e5e5;
+    padding: 0 10%;  
+    border: black 0.5px solid;
+  }
+
+
+
+  #logo {
+    width: 150px;
+    height: 150px;
+    margin-left: 0px;}
+
+
+  .nav_word {
+    text-decoration: none;
+    color: #4c5760;
+    font-size: 25px;
+    padding: 10px;
+    font-weight: 400;
+    display: inline-block;
+    transition: transform 0.2s, color 0.2s ease;
+    
+  }
+
+
+
+  .nav_word:hover {
+    transform: scale(1.2);
+    color: #fe5f55;
+    text-decoration: underline;
+  }
+
+  #nav_bar {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 1rem 2rem;
+  }
+  .side_bar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* start offscreen */
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: #e5e5e5;
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    list-style-type: none;
+    gap: 20px;
+    padding: 15px;
+    transition: right 0.9s ease; /* smooth slide animation */
+  }
+
+  /* Slide in when active */
+  .side_bar.active {
+    right: 0;
+  }
+
+  .side_bar li{
+    width: 100%;
+
+  }
+  .side_bar a{
+    width: 100%;
+  }
+  .menu_button {
+      margin-left: 5rem;
+      margin-top: 2rem;     /* space from the previous menu items */
+      cursor: pointer;
+      display: none;       /* show it's clickable */
+  }
+
+
+  /* Make the icon bigger */
+
+  .side_bar li:nth-child(1) {
+    margin: 0px;
+      margin-top: 2rem;     /* space from the previous menu items */
+      cursor: pointer;       /* show it's clickable */
+  }
+
+  /* Make the icon bigger */
+  .side_bar li:nth-child(1) .material-symbols-outlined {
+      font-size: 30px;
+  }
+
+
+
+  /* ================= Responsive Nav ================= */
+  @media (max-width: 768px) {
+    #nav_container {
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+
+  @media (max-width: 600px) {
+      .hideOnMobile{
+      display: none;
+    }
+    #nav_container{
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      
+    }
+    #logo{
+
+      margin-left: 1rem ;
+    }
+    body{
+      margin: 0px;
+      padding: 0px
+    }
+    .menu_button {
+      margin-right: 1rem;
+      margin-top: 1rem;     /* space from the previous menu items */
+      cursor: pointer;
+      display: inline;       /* show it's clickable */
+  }
+  .menu_button .material-symbols-outlined {
+      font-size: 35px;
+
+  }
+  .nav_word:hover {
+    transform: scale(1.1);
+    color: #fe5f55;
+  }
+  .button_home{
+    border: black 2px solid;
+
+  }
+  #view{
+    margin-top: 20px;
+  }
+    
+  }
+/* ================= Social Media ================= */
+#social_media {
+  border: 2px black solid;
+  height: 180px;
+  margin-left: 0px;
+  margin-top: 0px;
+  width: 100%;
+  background-color: rgba(36, 32, 16, 0.929);
+  text-align: center;
+}
+
+.icon {
+  font-size: 40px;
+  margin: 5px;
+}
+
+.icon i {
+  margin-top: 25px;
+  color: white;
+  transition: transform 0.2s, color 0.2s;
+}
+
+/* Social media hover colors */
+#social_media .icon:last-child:hover i {
+  color: rgb(79, 206, 93);
+  transform: scale(1.2);
+}
+
+#social_media .icon:nth-child(1):hover i {
+  color: rgb(66, 103, 179);
+  transform: scale(1.2);
+}
+
+#social_media .icon:nth-child(2):hover i {
+  color: rgb(193, 53, 132);
+  transform: scale(1.2);
+}
+
+
+
+/* ================= Gallery / Images ================= */
+.grid_container {
+  background-color: #dddbdb;
+  padding: 0px;
+
+  margin: 0px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 0px;
+  margin: 0px 0px;
+
+     padding-left: 2%;
+  padding-right: 2%;
+  border-top: 1px solid black;
+
+}
+
+
+
+/* Columns for gallery */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  
+  
+}
+
+.column img {
+  margin-top: 20px;
+  vertical-align: middle;
+  border-radius: 8px;
+  width: 100%;
+  padding-left: 4%;
+  padding-right: 4%
+}
+
+/* ================= Responsive Columns ================= */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0px 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 70%;
+    padding: 0px 20px;
+  }
+  .column img{
+    padding: 20px;;
+  }
+
+
+}
+.column img:hover {
+  cursor: pointer;
+  border: none;
+  box-shadow: none;
+}
+
+/* ================= Gallery Intro ================= */
+.gallery_intro {
+  text-align: center;
+  font-size: 30px;
+  background-color: #dddbdb;
+  padding: 30px;
+  margin: 0px;
+  padding-top: 45px;
+  
+}
+
+
+
+.column a.todo {
+  display: block;       /* ensures each link takes its own box */
+  margin-bottom: 20px;  /* vertical spacing between images */
+}
+.appear{
+  opacity: 0;
+  color: #14213d;
+  
+}
+
+/* this is for review parts /////////////////////////*/
+.comment{
+  margin-top: 4%;
+  width: 100%;
+  text-align: center;
+  
+  color: #14213d;
+  font-family: "Comfortaa", sans-serif;
+}
+
+#reviews {
+font-size: 3.5rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+/* puts the 3 quotes side by side */
+.quotes {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* big quote mark */
+.quotes h1 {
+  font-size: 60px;
+  margin-bottom: 2%;
+  font-weight: normal;
+  
+}
+
+/* review text */
+.quotes p {
+  font-size: 1.3rem;
+  line-height: 2;
+  
+}
+@media (max-width: 768px) {
+  .quotes {
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+       align-items: center;
+       
+  }
+
+  .quotes > div {
+    max-width: 70%;
+  }
+
+  #reviews {
+    font-size: 3rem;
+  }
+
+  .quotes p {
+    font-size: 1.55rem;
+    line-height: 1.8;
+  }
+}
+.todo_2{
+  opacity: 0;
+}
+.line {
+  width: 60px;
+  height: 3px;
+  background: black;
+  margin: 0 auto 0px;
+  
+}
+.comment_2{
+   max-width: 1000px;   /* controls line length */
+  margin: 0 auto;     /* centers it */
+  line-height: 1.6;
+  
+}
+#reviews a {
+  color: #14213d;
+  transition: color 0.3s ease;
+   /* makes hover smooth */
+}
+
+/* hover effect */
+#reviews a:hover {
+  color: #385ea16b;
+}
+#backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: #729e80;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(20px);
+}
+#backToTop:hover{
+  background-color: #88403b;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
