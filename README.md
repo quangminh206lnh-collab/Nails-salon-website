@@ -51,6 +51,20 @@ During this project, I improved my front-end development skills, especially in:
 
 The website uses a soft, elegant style that fits a beauty and nail salon brand. I focused on creating a polished look with simple navigation, attractive buttons, social media links, and a consistent visual identity.
 
+## Project Structure
+
+```text
+nailsalon/
+├── home.html                 # Main landing page with welcome section and navigation
+├── gallery.html              # Page showing salon photos, reviews, and gallery layout
+├── price.html                # Page displaying nail service prices and packages
+├── contact.html              # Page with contact details, opening hours, and map
+├── stylehome.css             # Styling for the home page
+├── stylegallery.css          # Styling for the gallery page
+├── price.css                 # Styling for the price page
+├── contactstyle.css          # Styling for the contact page
+└── photos/                   # Folder containing image assets used on the website
+```
 
 ## What I Want to Improve Later
 
